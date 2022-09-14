@@ -4,11 +4,11 @@
  * 
  * Author: 		Noman
  * Date:   		26 Aug, 2022
- * Website: 	https://noman47147062765.wordpress.com
+ * Website: 	https://portfolio-noman.herokuapp.com/
  * Category:	Portfolio website
  * 
  * */
 
-define('BASE_URL', 'http://localhost/portfolio-website');
+define('BASE_URL', 'https://portfolio-noman.herokuapp.com');
 
 ?>
