@@ -6,14 +6,22 @@
  * 
  * */
 
+$url  = $_SERVER['REQUEST_URI'];
+$x    = pathinfo($url);
+$page = trim($x['basename']);
+
 ?>
 
-
+<?php if ( $page === 'edtutor.php' ): ?>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.17/dist/js/splide.min.js"></script>
-
-
+<?php endif; ?>
+<?php if ( $page === 'freelance.php' || 'edtutor.php' ): ?>
 <script type="text/javascript" src="<?php echo BASE_URL; ?>/assets/js/readingposition.js"></script>
+<?php endif; ?>
 <script>
+
+    <?php if ( $page === 'freelance.php' || 'edtutor.php' ): ?>
+
     var rpi;
     setTimeout(function waitUntilDomIsReadyLoadingCustomFontsMightOffsetThis() {
       rpi = new ReadingPositionIndicator({
@@ -21,6 +29,11 @@
       }).init();
     }, 500);
 
+    <?php endif; ?>
+
+
+    <?php if ( $page === 'edtutor.php' ): ?>
+    
     document.addEventListener( 'DOMContentLoaded', function () {
       new Splide( '#thumbnail-carousel', {
             fixedWidth: 240,
@@ -30,7 +43,10 @@
             pagination: true,
             padding: { top: 10, bottom: 20 },
       } ).mount();
-    } ); 
+    } );
+
+    <?php endif; ?> 
+    
 </script>
 
 <!-- Lazy load -->

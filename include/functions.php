@@ -9,6 +9,16 @@
  * 
  * */
 
-define('BASE_URL', 'https://portfolio-noman.herokuapp.com');
+define( 'DEBUG' , false );
+
+$base_url = '';
+
+if( DEBUG ) {
+    $base_url = 'http://' . 'localhost/portfolio-website';
+} else{
+    $base_url = 'https://portfolio-noman.herokuapp.com';
+}
+
+define( 'BASE_URL', $base_url );
 
 ?>
